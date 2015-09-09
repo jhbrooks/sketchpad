@@ -1,12 +1,14 @@
 $(document).ready(function(){
 	var surfaceDimensions = Number($('#surface').css('height').slice(0,-2));
-	var firstSquareDims = 16;
+	var firstSquareDims = 60;
 	var drawSquares = function(dimensions) {
 		for (var j = 0; j < dimensions; j++) {
 			for (var i = 0; i < dimensions; i++) {
 				$('#surface').append($("<div class='square'></div>"));
 			};
 		};
+		var computedDims = surfaceDimensions / dimensions;
+		$('.square').css({'height':computedDims,'width':computedDims});
 	};
 
 	drawSquares(firstSquareDims);
