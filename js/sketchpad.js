@@ -8,7 +8,10 @@ $(document).ready(function(){
 				$('#surface').append($("<div class='square'></div>"));
 			};
 		};
-		var computedDims = surfaceDimensions / dimensions;
+		var computedDims = Math.floor((surfaceDimensions / dimensions));
+		var extraSpace = surfaceDimensions % dimensions;
+		var extraPadding = Math.floor((extraSpace/2));
+		$('#surface').css({'padding':extraPadding});
 		$('.square').css({'height':computedDims,'width':computedDims});
 	};
 
