@@ -23,7 +23,7 @@ $(document).ready(function(){
 				refreshSurface();
 			} else {
 				$('#surface').children('.square').remove();
-				drawSquares(Number(newDims));
+				drawSquares(Math.floor(Number(newDims)));
 			};
 		};
 	};
