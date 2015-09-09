@@ -16,6 +16,10 @@ $(document).ready(function(){
 		$(this).css({'background-color':'#000000'});
 	});
 	$('#refresh').on('click','a',function(){
-		$('#surface').children('.square').css({'background-color':''});
+		var newDims = prompt("Refresh with how many squares in each row?");
+		if (newDims !== null) {
+			$('#surface').children('.square').remove();
+			drawSquares(Number(newDims));
+		};
 	});
 });
