@@ -5,4 +5,7 @@ $(document).ready(function(){
 			$('#surface').append($("<div class='square'></div>"));
 		};
 	};
+	$(document).on('mouseenter','.square',function(){
+		$(this).css({'background-color':'#000000'});
+	});
 });
