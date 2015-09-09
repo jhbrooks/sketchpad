@@ -10,15 +10,11 @@
 }
 
 #refresh {
-	height: 15px;
-	width: 50px;
+	display: block;
+	cursor: pointer;
+	border: 0px none;
+	height: 30px;
+	width: 51px;
 	margin: 30px auto;
-	padding: 5px 10px;
-	background-color: #f0f0f0;
-	
-}
-
-#refresh > a {
-	text-decoration: none;
-	color: #000000;
+	background-color: #f0f0f0;	
 }

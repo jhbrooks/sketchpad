@@ -36,5 +36,5 @@ $(document).ready(function(){
 	$(document).on('mouseenter','.square',function(){
 		$(this).css({'background-color':'#000000'});
 	});
-	$('#refresh').on('click','a',refreshSurface);
+	$('#refresh').on('click',refreshSurface);
 });
