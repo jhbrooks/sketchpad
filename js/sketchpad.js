@@ -11,7 +11,8 @@ $(document).ready(function(){
 		var computedDims = Math.floor((surfaceDimensions / dimensions));
 		var extraSpace = surfaceDimensions % dimensions;
 		var extraPadding = Math.floor((extraSpace/2));
-		$('#surface').css({'padding':extraPadding});
+		var adjSurfaceDims = surfaceDimensions - (extraPadding * 2);
+		$('#surface').css({'height':adjSurfaceDims,'width':adjSurfaceDims,'padding':extraPadding});
 		$('.square').css({'height':computedDims,'width':computedDims});
 	};
 
