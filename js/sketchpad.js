@@ -15,7 +15,7 @@ $(document).ready(function(){
 	$(document).on('mouseenter','.square',function(){
 		$(this).css({'background-color':'#000000'});
 	});
-	$(document).find('#refresh').on('click','a',function(){
+	$('#refresh').on('click','a',function(){
 		$('#surface').children('.square').css({'background-color':''});
 	});
 });
