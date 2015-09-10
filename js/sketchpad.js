@@ -86,17 +86,16 @@ $(document).ready(function(){
 	});
 
 	$('#setColor').on('keyup','input',function(){
-		colorValid = isColorValid($(this).val());
-		if ($(this).val() === '') {
+		var newColor = $(this).val();
+		if (newColor === '') {
+			newColor = '#000000'
+		};
+		colorValid = isColorValid(newColor);
+		if (colorValid === true) {
 			$('.colorStar').css({'display':'inline'})
-			$('.colorStar').css({'color':'#000000'}); 
-		}  else {
-			if (colorValid === true) {
-				$('.colorStar').css({'display':'inline'})
-				$('.colorStar').css({'color':($(this).val())});
-			} else {
-				$('.colorStar').css({'display':'none'});
-			};
+			$('.colorStar').css({'color':newColor});
+		} else {
+			$('.colorStar').css({'display':'none'});
 		};
 	});
 
