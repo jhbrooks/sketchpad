@@ -20,6 +20,27 @@ $(document).ready(function(){
 		$('.square').css({'height':computedDims,'width':computedDims});
 	};
 
+	var colorSquare = function() {
+		if (rainbowOn === true) {
+			var rRed = Math.ceil(Math.random()*255);
+			var rGreen = Math.ceil(Math.random()*255);
+			var rBlue = Math.ceil(Math.random()*255);
+			var randomColor = "rgb("+rRed+","+rGreen+","+rBlue+")";
+			currentColor = randomColor;
+		};
+		if ((colorValid === true) || (rainbowOn === true)) {
+			$(this).finish();
+			$(this).css({'opacity':1});
+			$(this).css({'background-color':currentColor});
+		};
+	};
+
+	var fadeSquare = function() {
+		if (trailOn === true) {
+			$(this).animate({'opacity':0},600);
+		};
+	};
+
 	var refreshSurface = function() {
 		var newDims = prompt("Refresh with how many squares in each row?");
 		if (newDims !== null) {
@@ -45,6 +66,7 @@ $(document).ready(function(){
 			rainbowOn = true;
 		} else {
 			rainbowOn = false;
+			updateCurrentColor();
 		};
 	};
 
@@ -57,6 +79,13 @@ $(document).ready(function(){
 		};
 	};
 
+	var updateCurrentColor = function() {
+		currentColor = $('#setColor').children('input').val();
+		if (currentColor === '') {
+			currentColor = '#000000'
+		};
+	};
+
 	var isColorValid = function(inputColor) {
 		var $testDiv = $("<div></div>");
 		var noColor = $testDiv.css('background-color');
@@ -65,48 +94,28 @@ $(document).ready(function(){
 		return (noColor !== withColor);
 	};
 
-	drawSquares(firstSquareDims);
-	$(document).on('mouseenter','.square',function(){
-		if (rainbowOn === true) {
-			var rRed = Math.ceil(Math.random()*255);
-			var rGreen = Math.ceil(Math.random()*255);
-			var rBlue = Math.ceil(Math.random()*255);
-			var randomColor = "rgb("+rRed+","+rGreen+","+rBlue+")";
-			currentColor = randomColor;
-		} else {
-			if ($('#setColor').children('input').val() === '') {
-				currentColor = '#000000'
-			} else {
-				currentColor = $('#setColor').children('input').val();
-			};
-		};
-		if ((colorValid === true) || (rainbowOn === true)) {
-			$(this).finish();
-			$(this).css({'opacity':1});
-			$(this).css({'background-color':currentColor});
-		};
-	});
-	$(document).on('mouseleave','.square',function(){
-		if (trailOn === true) {
-			$(this).animate({'opacity':0},600);
-		};
-	});
-
-	$('#setColor').on('keyup','input',function(){
-		var newColor = $(this).val();
-		if (newColor === '') {
-			newColor = '#000000'
-		};
-		colorValid = isColorValid(newColor);
+	var updateColorStars = function() {
 		if (colorValid === true) {
 			$('.colorStar').css({'display':'inline'})
 			$('.colorStar').css({'color':newColor});
 		} else {
 			$('.colorStar').css({'display':'none'});
 		};
-	});
+	};
+
+	drawSquares(firstSquareDims);
+	updateCurrentColor();
+
+	$(document).on('mouseenter','.square',colorSquare);
+	$(document).on('mouseleave','.square',fadeSquare);
 
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
-	$('#trail').on('click',trailToggle)
+	$('#trail').on('click',trailToggle);
+
+	$('#setColor').on('keyup','input',function(){
+		updateCurrentColor();
+		colorValid = isColorValid(currentColor);
+		updateColorStars();
+	});
 });
