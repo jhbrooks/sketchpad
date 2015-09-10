@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var surfaceDimensions = Number($('#surface').css('height').slice(0,-2));
 	var firstSquareDims = 60;
+
 	var rainbowOn = false;
 	var trailOn = false;
 	var currentColor = '#000000';
@@ -22,14 +23,14 @@ $(document).ready(function(){
 	};
 
 	var colorSquare = function() {
-		if (rainbowOn === true) {
+		if (rainbowOn) {
 			var rRed = Math.ceil(Math.random()*255);
 			var rGreen = Math.ceil(Math.random()*255);
 			var rBlue = Math.ceil(Math.random()*255);
 			var randomColor = "rgb("+rRed+","+rGreen+","+rBlue+")";
 			currentColor = randomColor;
 		};
-		if ((colorValid === true) || (rainbowOn === true)) {
+		if (colorValid || rainbowOn) {
 			$(this).finish();
 			$(this).css({'opacity':1});
 			$(this).css({'background-color':currentColor});
@@ -37,7 +38,7 @@ $(document).ready(function(){
 	};
 
 	var fadeSquare = function() {
-		if (trailOn === true) {
+		if (trailOn) {
 			$(this).animate({'opacity':0},600);
 		};
 	};
@@ -63,21 +64,13 @@ $(document).ready(function(){
 
 	var rainbowToggle = function() {
 		$('#rainbow').toggleClass('active');
-		if (rainbowOn === false) {
-			rainbowOn = true;
-		} else {
-			rainbowOn = false;
-			updateCurrentColor();
-		};
+		rainbowOn = !rainbowOn;
+		updateCurrentColor();
 	};
 
 	var trailToggle = function() {
 		$('#trail').toggleClass('active');
-		if (trailOn === false) {
-			trailOn = true;
-		} else {
-			trailOn = false;
-		};
+		trailOn = !trailOn;
 	};
 
 	var updateCurrentColor = function() {
@@ -96,7 +89,7 @@ $(document).ready(function(){
 	};
 
 	var updateColorStars = function() {
-		if (colorValid === true) {
+		if (colorValid) {
 			$('.colorStar').css({'display':'inline'})
 			$('.colorStar').css({'color':newColor});
 		} else {
