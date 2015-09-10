@@ -77,6 +77,14 @@ $(document).ready(function(){
 		};
 	});
 
+	$('input').on('keyup',function(){
+		if ($(this).val() === '') {
+			$('.colorStar').css({'color':'#000000'}); 
+		}  else {
+			$('.colorStar').css({'color':($(this).val())});
+		};
+	});
+
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
 	$('#trail').on('click',trailToggle)
