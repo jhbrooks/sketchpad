@@ -53,8 +53,13 @@ $(document).ready(function(){
 			currentColor = randomColor;
 			console.log(currentColor);
 		};
+		console.log(currentColor);
 		$(this).css({'background-color':currentColor});
 	});
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
+	$('#setColor').on('keyup','input',function(){
+		currentColor = $(this).val();
+		console.log(currentColor);
+	});
 });
