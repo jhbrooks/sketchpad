@@ -75,9 +75,11 @@ $(document).ready(function(){
 				currentColor = $('#setColor').children('input').val();
 			};
 		};
-		$(this).finish();
-		$(this).css({'opacity':1});
-		$(this).css({'background-color':currentColor});
+		if (colorValid === true) {
+			$(this).finish();
+			$(this).css({'opacity':1});
+			$(this).css({'background-color':currentColor});
+		};
 	});
 	$(document).on('mouseleave','.square',function(){
 		if (trailOn === true) {
