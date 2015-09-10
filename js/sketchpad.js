@@ -2,6 +2,7 @@ $(document).ready(function(){
 	var surfaceDimensions = Number($('#surface').css('height').slice(0,-2));
 	var firstSquareDims = 60;
 	var rainbowOn = false;
+	var trailOn = false;
 	var currentColor = '#000000';
 
 	var drawSquares = function(dimensions) {
@@ -42,6 +43,14 @@ $(document).ready(function(){
 		};
 	};
 
+	var trailToggle = function() {
+		if (trailOn === false) {
+			trailOn = true;
+		} else {
+			trailOn = false;
+		};
+	};
+
 	drawSquares(firstSquareDims);
 	$(document).on('mouseenter','.square',function(){
 		if (rainbowOn === true) {
@@ -60,6 +69,13 @@ $(document).ready(function(){
 		};
 		$(this).css({'background-color':currentColor});
 	});
+	$(document).on('mouseleave','.square',function(){
+		if (trailOn === true) {
+			$(this).animate({'opacity':0},600);
+		};
+	});
+
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
+	$('#trail').on('click',trailToggle)
 });
