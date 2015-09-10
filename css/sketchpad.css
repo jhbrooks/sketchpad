@@ -6,7 +6,7 @@
 #surface {
 	height: 480px;
 	width: 480px;
-	margin: 30px auto;
+	margin: 20px auto;
 	background-color: #f0f0f0;
 }
 
@@ -34,7 +34,7 @@ button {
 }
 
 #setColor {
-	margin-top: 90px;
+	margin-top: 70px;
 }
 
 #setColor > span {
