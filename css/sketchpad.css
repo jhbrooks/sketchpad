@@ -1,3 +1,8 @@
+#wrapper {
+	width: 480px;
+	margin: 0px auto;
+}
+
 #surface {
 	height: 480px;
 	width: 480px;
@@ -14,7 +19,16 @@ button {
 	cursor: pointer;
 	border: 0px none;
 	height: 30px;
-	margin: 30px auto;
 	width: 60px;	
 	background-color: #f0f0f0;
+}
+
+.left {
+	float: left;
+	margin-left: 120px;
+}
+
+.right {
+	float: right;
+	margin-right: 120px;
 }
