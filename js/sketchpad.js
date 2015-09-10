@@ -62,11 +62,4 @@ $(document).ready(function(){
 	});
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
-	/*$('#setColor').on('keyup','input',function(){
-		if ($(this).val() === '') {
-			currentColor = '#000000'
-		} else {
-			currentColor = $(this).val();
-		};
-	});*/
 });
