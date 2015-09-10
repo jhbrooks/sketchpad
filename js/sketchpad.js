@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var firstSquareDims = 60;
 	var rainbowOn = false;
 	var trailOn = false;
+	var colorValid = true;
 	var currentColor = '#000000';
 
 	var drawSquares = function(dimensions) {
@@ -51,6 +52,14 @@ $(document).ready(function(){
 		};
 	};
 
+	var isColorValid = function(inputColor) {
+		var $testDiv = $("<div></div>");
+		var noColor = $testDiv.css('background-color');
+		$testDiv.css({'background-color':inputColor});
+		var withColor = $testDiv.css('background-color');
+		return (noColor !== withColor);
+	};
+
 	drawSquares(firstSquareDims);
 	$(document).on('mouseenter','.square',function(){
 		if (rainbowOn === true) {
@@ -59,7 +68,6 @@ $(document).ready(function(){
 			var rBlue = Math.ceil(Math.random()*255);
 			var randomColor = "rgb("+rRed+","+rGreen+","+rBlue+")";
 			currentColor = randomColor;
-			console.log(currentColor);
 		} else {
 			if ($('#setColor').children('input').val() === '') {
 				currentColor = '#000000'
@@ -78,6 +86,7 @@ $(document).ready(function(){
 	});
 
 	$('input').on('keyup',function(){
+		colorValid = isColorValid($(this).val());
 		if ($(this).val() === '') {
 			$('.colorStar').css({'color':'#000000'}); 
 		}  else {
