@@ -37,6 +37,18 @@ button {
 	margin-top: 90px;
 }
 
+#setColor > span {
+	display: block;
+	margin: 0px auto;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 11px;
+	font-family: "Lucida Grande", sans-serif;
+	height: 20px;
+	width: 157px;	
+	background-color: #f0f0f0;
+}
+
 #setColor > input {
 	display: block;
 	border: 3px solid #f0f0f0;
