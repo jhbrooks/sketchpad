@@ -85,7 +85,7 @@ $(document).ready(function(){
 		};
 	});
 
-	$('input').on('keyup',function(){
+	$('#setColor').on('keyup','input',function(){
 		colorValid = isColorValid($(this).val());
 		if ($(this).val() === '') {
 			$('.colorStar').css({'color':'#000000'}); 
