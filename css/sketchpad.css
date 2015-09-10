@@ -25,12 +25,12 @@ button {
 
 .left {
 	float: left;
-	margin-left: 120px;
+	margin-left: 75px;
 }
 
 .right {
 	float: right;
-	margin-right: 120px;
+	margin-right: 75px;
 }
 
 #setColor {
