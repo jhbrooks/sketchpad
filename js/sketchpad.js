@@ -88,9 +88,15 @@ $(document).ready(function(){
 	$('#setColor').on('keyup','input',function(){
 		colorValid = isColorValid($(this).val());
 		if ($(this).val() === '') {
+			$('.colorStar').css({'display':'inline'})
 			$('.colorStar').css({'color':'#000000'}); 
 		}  else {
-			$('.colorStar').css({'color':($(this).val())});
+			if (colorValid === true) {
+				$('.colorStar').css({'display':'inline'})
+				$('.colorStar').css({'color':($(this).val())});
+			} else {
+				$('.colorStar').css({'display':'none'});
+			};
 		};
 	});
 
