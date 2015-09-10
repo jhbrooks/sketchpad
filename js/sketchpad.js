@@ -39,7 +39,6 @@ $(document).ready(function(){
 			rainbowOn = true;
 		} else {
 			rainbowOn = false;
-			currentColor = '#000000';
 		};
 	};
 
@@ -52,14 +51,22 @@ $(document).ready(function(){
 			var randomColor = "rgb("+rRed+","+rGreen+","+rBlue+")";
 			currentColor = randomColor;
 			console.log(currentColor);
+		} else {
+			if ($('#setColor').children('input').val() === '') {
+				currentColor = '#000000'
+			} else {
+				currentColor = $('#setColor').children('input').val();
+			};
 		};
-		console.log(currentColor);
 		$(this).css({'background-color':currentColor});
 	});
 	$('#refresh').on('click',refreshSurface);
 	$('#rainbow').on('click',rainbowToggle);
-	$('#setColor').on('keyup','input',function(){
-		currentColor = $(this).val();
-		console.log(currentColor);
-	});
+	/*$('#setColor').on('keyup','input',function(){
+		if ($(this).val() === '') {
+			currentColor = '#000000'
+		} else {
+			currentColor = $(this).val();
+		};
+	});*/
 });
