@@ -40,6 +40,7 @@ $(document).ready(function(){
 	};
 
 	var rainbowToggle = function() {
+		$('#rainbow').toggleClass('active');
 		if (rainbowOn === false) {
 			rainbowOn = true;
 		} else {
@@ -48,6 +49,7 @@ $(document).ready(function(){
 	};
 
 	var trailToggle = function() {
+		$('#trail').toggleClass('active');
 		if (trailOn === false) {
 			trailOn = true;
 		} else {
