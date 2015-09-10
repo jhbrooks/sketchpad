@@ -75,7 +75,7 @@ $(document).ready(function(){
 				currentColor = $('#setColor').children('input').val();
 			};
 		};
-		if (colorValid === true) {
+		if ((colorValid === true) || (rainbowOn === true)) {
 			$(this).finish();
 			$(this).css({'opacity':1});
 			$(this).css({'background-color':currentColor});
