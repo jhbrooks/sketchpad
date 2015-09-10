@@ -3,8 +3,9 @@ $(document).ready(function(){
 	var firstSquareDims = 60;
 	var rainbowOn = false;
 	var trailOn = false;
-	var colorValid = true;
 	var currentColor = '#000000';
+	var colorValid = true;
+	
 
 	var drawSquares = function(dimensions) {
 		for (var j = 0; j < dimensions; j++) {
