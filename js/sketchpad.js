@@ -91,7 +91,7 @@ $(document).ready(function(){
 	var updateColorStars = function() {
 		if (colorValid) {
 			$('.colorStar').css({'display':'inline'})
-			$('.colorStar').css({'color':newColor});
+			$('.colorStar').css({'color':currentColor});
 		} else {
 			$('.colorStar').css({'display':'none'});
 		};
