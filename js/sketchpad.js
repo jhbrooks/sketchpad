@@ -50,7 +50,7 @@ $(document).ready(function(){
 				alert("Not a number! Please try again.");
 				refreshSurface();	
 			} else if (Number(newDims) > 120) {
-				alert("Number too high! Please try again with a number less than 121.");
+				alert("Number too high! Please try again with a number less than or equal to 120.");
 				refreshSurface();
 			} else if (Number(newDims) <= 0){
 				alert("Number too low! Please try again with a number greater than 0.");
