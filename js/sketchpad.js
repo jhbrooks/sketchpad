@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var surfaceDimensions = Number($('#surface').css('height').slice(0,-2));
-	var firstSquareDims = 60;
+	var currentSquareDims = 60;
 
 	var rainbowOn = false;
 	var trailOn = false;
@@ -44,7 +44,7 @@ $(document).ready(function(){
 	};
 
 	var refreshSurface = function() {
-		var newDims = prompt("Refresh with how many squares in each row?");
+		var newDims = prompt("Refresh with how many squares in each row?",currentSquareDims);
 		if (newDims !== null) {
 			if (isNaN(newDims)) {
 				alert("Not a number! Please try again.");
@@ -57,7 +57,8 @@ $(document).ready(function(){
 				refreshSurface();
 			} else {
 				$('#surface').children('.square').remove();
-				drawSquares(Math.floor(Number(newDims)));
+				currentSquareDims = Math.floor(Number(newDims))
+				drawSquares(currentSquareDims);
 			};
 		};
 	};
@@ -97,7 +98,7 @@ $(document).ready(function(){
 		};
 	};
 
-	drawSquares(firstSquareDims);
+	drawSquares(currentSquareDims);
 	updateCurrentColor();
 
 	$(document).on('mouseenter','.square',colorSquare);
