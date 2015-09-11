@@ -20,7 +20,7 @@ button {
 	border: 0px none;
 	height: 30px;
 	width: 60px;	
-	background-color: #f0f0f0;
+	background-color: #e0e0e0;
 }
 
 .left {
@@ -34,7 +34,7 @@ button {
 }
 
 .active {
-	background-color: #c0c0c0;
+	background-color: #b0b0b0;
 }
 
 #setColor {
@@ -50,11 +50,11 @@ button {
 	font-family: "Lucida Grande", sans-serif;
 	height: 20px;
 	width: 157px;	
-	background-color: #f0f0f0;
+	background-color: #e0e0e0;
 }
 
 #setColor > input {
 	display: block;
-	border: 3px solid #f0f0f0;
+	border: 3px solid #e0e0e0;
 	margin: 0px auto;
 }
