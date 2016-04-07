@@ -6,7 +6,7 @@
 #surface {
 	height: 480px;
 	width: 480px;
-	margin: 20px auto;
+	margin: 10px auto;
 	background-color: #f0f0f0;
 }
 
@@ -38,7 +38,9 @@ button {
 }
 
 #setColor {
-	margin-top: 70px;
+	margin: 50px auto 10px auto;
+	width: 157px;
+	background-color: #e0e0e0;
 }
 
 #setColor > span {
@@ -49,8 +51,7 @@ button {
 	font-size: 11px;
 	font-family: "Lucida Grande", sans-serif;
 	height: 20px;
-	width: 157px;	
-	background-color: #e0e0e0;
+	width: 157px;
 }
 
 #setColor > input {
