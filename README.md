@@ -1,2 +1,3 @@
 # sketchpad
-javascript/jQuery sketchpad, made for the Odin Project (http://www.theodinproject.com/web-development-101/javascript-and-jquery)
+
+JavaScript/jQuery sketchpad. Made for the [JavaScript/JQuery Project](http://www.theodinproject.com/web-development-101/javascript-and-jquery) in The Odin Project's Web Development 101 Curriculum.
